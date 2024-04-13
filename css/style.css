@@ -40,7 +40,7 @@ a {
     background: url('../media/homeImg.jpg');
     background-size: cover;
     background-position: center;
-    min-height: 100vh;
+    min-height: 100dvh;
 }
 /* end Home Page */
 /* start Product Page */
