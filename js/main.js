@@ -1,3 +1,3 @@
-// handleclassactive
 // scrolltosomewhere
 // autoprogress
+// handleActive

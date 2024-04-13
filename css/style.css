@@ -35,6 +35,31 @@ a {
 }
 /* End Global */
 
+/* start Header */
+header .navbar-nav li a {
+    position: relative;
+    width: fit-content;
+    padding-block: 0.2rem;
+    transition: .3s;
+    &::after {
+        content: "";
+        width: 0%;
+        height: 1px;
+        position: absolute;
+        left: 0;
+        bottom: -1px;
+        background-color: var(--main-color);
+        transition: .3s;
+    }
+    &:hover, &.active {
+        color: #d0d8de !important;
+        &::after {
+            width: 100%;
+        }
+    }
+}
+/* end Header */
+
 /* start Home Page */
 .home-container {
     background: url('../media/homeImg.jpg');
@@ -43,10 +68,52 @@ a {
     min-height: 100dvh;
 }
 /* end Home Page */
-/* start Product Page */
+
 .product-container, .shopping-container, .checkout-container {
     background: linear-gradient(to right bottom, #1f1f1f, #333);
     min-height: 100dvh;
+}
+
+/* start Product Page */
+.product-container {
+    main .carousel-caption {
+        p {
+            font-size: .7rem;
+            @media (min-width: 576px) {
+                font-size: 1rem;
+            }
+            @media (min-width: 768px) {
+                font-size: 1.3rem;
+            }
+            @media (min-width: 992px) {
+                font-size: 1.6rem;
+            }
+            @media (min-width: 1200px) {
+                font-size: 1.9rem;
+            }
+            @media (min-width: 1400px) {
+                font-size: 2.2rem;
+            }
+        }
+        button {
+            font-size: .5rem;
+            @media (min-width: 576px) {
+                font-size: .8rem;
+            }
+            @media (min-width: 768px) {
+                font-size: 1rem;
+            }
+            @media (min-width: 992px) {
+                font-size: 1.2rem;
+            }
+            @media (min-width: 1200px) {
+                font-size: 1.4rem;
+            }
+            @media (min-width: 1400px) {
+                font-size: 1.6rem;
+            }
+        }
+    }
 }
 /* end Product Page */
 
