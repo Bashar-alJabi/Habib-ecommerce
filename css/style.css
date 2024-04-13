@@ -1,0 +1,69 @@
+/* scrollbar */
+/* liststyle */
+/* resflex */
+/* resgrid */
+/* stylvite */
+/* backgroundtext */
+/* Start Global */
+:root {
+    --main-color: #f7f7f7;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+}
+*:focus {
+    outline: none;
+}
+html {
+    overflow-x: hidden;
+}
+body {
+    font-family: "Montserrat", sans-serif;
+    color: var(--main-color);
+}
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+/* End Global */
+
+/* start Home Page */
+.home-container {
+    background: url('../media/homeImg.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+}
+/* end Home Page */
+/* start Product Page */
+.product-container, .shopping-container, .checkout-container {
+    background: linear-gradient(to right bottom, #1f1f1f, #333);
+}
+/* end Product Page */
+
+/* start Footer */
+footer ul li {
+    a {
+        font-size: 1.2rem;
+        color: var(--main-color);
+        transition: .3s;
+    }
+    .facebook:hover {
+        color: #1877f2;
+    }
+    .youtube:hover {
+        color: #ff0000;
+    }
+    .twitter:hover {
+        color: #1da1f2;
+    }
+}
+/* end Footer */
