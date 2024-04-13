@@ -46,6 +46,7 @@ a {
 /* start Product Page */
 .product-container, .shopping-container, .checkout-container {
     background: linear-gradient(to right bottom, #1f1f1f, #333);
+    min-height: 100dvh;
 }
 /* end Product Page */
 
