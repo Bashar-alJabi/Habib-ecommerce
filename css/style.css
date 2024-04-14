@@ -7,6 +7,7 @@
 /* Start Global */
 :root {
     --main-color: #f7f7f7;
+    --main-transition: .3s;
 }
 
 * {
@@ -40,7 +41,7 @@ header .navbar-nav li a {
     position: relative;
     width: fit-content;
     padding-block: 0.2rem;
-    transition: .3s;
+    transition: var(--main-transition);
     &::after {
         content: "";
         width: 0%;
@@ -49,7 +50,7 @@ header .navbar-nav li a {
         left: 0;
         bottom: -1px;
         background-color: var(--main-color);
-        transition: .3s;
+        transition: var(--main-transition);
     }
     &:hover, &.active {
         color: #d0d8de !important;
@@ -117,12 +118,57 @@ header .navbar-nav li a {
 }
 /* end Product Page */
 
+/* start Shopping Page */
+.shopping-container main {
+    .card {
+        width: 18rem;
+        background-color: #332D2D;
+        color: var(--main-color);
+        position: relative;
+        top: 0;
+        transition: var(--main-transition);
+        &:hover {
+            top: -.5rem;
+        }
+        .card-img-top {
+            aspect-ratio: 1/1;
+        }
+        .card-title {
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            line-clamp: 1;
+            -webkit-box-orient: vertical;
+        }
+        .card-text {
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            line-clamp: 3;
+            -webkit-box-orient: vertical;
+        }
+        .bottoms {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .buy-button {
+                font-weight: bold;
+            }
+            .card-price {
+                color: #E4A11B;
+                margin: 0;
+            }
+        }
+    }
+}
+/* end Shopping Page */
+
 /* start Footer */
 footer ul li {
     a {
         font-size: 1.2rem;
         color: var(--main-color);
-        transition: .3s;
+        transition: var(--main-transition);
     }
     .facebook:hover {
         color: #1877f2;
