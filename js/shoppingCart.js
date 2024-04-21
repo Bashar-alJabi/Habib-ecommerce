@@ -66,3 +66,12 @@ const getProducts = async () => {
     })
 }
 getProducts();
+
+// Scroll To Top
+let scrollSpan = document.querySelector(".shopping-container .up");
+window.onscroll = function() {
+    this.scrollY >= 666 ? scrollSpan.classList.add('show') : scrollSpan.classList.remove('show');
+};
+scrollSpan.onclick = () => {
+    window.scrollTo({top: 0, behavior: 'smooth',});
+};
