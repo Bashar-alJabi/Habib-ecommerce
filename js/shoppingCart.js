@@ -1,8 +1,9 @@
-const shoppingMain = document.querySelector('.shopping-container main')
+const shoppingMain = document.querySelector('.shopping-container main');
+const cartIcon = document.querySelector('.shopping-container header .icon-cart');
 
-const getProducts = () => {
+const getProducts = async () => {
     // get products from API
-    fetch('https://fakestoreapi.com/products')
+    await fetch('https://fakestoreapi.com/products')
         .then(res => res.json``)
         .then(data =>
             // create Box from every product
@@ -39,10 +40,29 @@ const getProducts = () => {
             titleCard.textContent = product.title;
             textCard.textContent = product.description;
             btnCard.href = '#';
-            btnCard.textContent = 'Buy Now'
+            btnCard.textContent = 'Buy Now';
             priceCard.textContent = `${product.price} $`;
 
         }))
         .catch(err => console.log(err))
+
+    const cards = document.querySelectorAll(".shopping-container main .card");
+    cards.forEach(card => {
+        // Handle Buy Button
+        const buyButton = card.querySelector(".buy-button");
+        buyButton.onclick = () => {
+            // add quantity of products to localStorage
+            const numProd = localStorage.getItem('numProd');
+            localStorage.setItem('numProd', +numProd + 1);
+            Swal.fire({
+				icon: "success", title: "Your Purchase has been Successfully!", background: "#f7f7f7",
+                showConfirmButton: false, showCancelButton: false, timerProgressBar: true, timer: 1000,
+			});
+            // add total price to localStorage
+            const price = card.querySelector('.buy-button ~ .card-price')
+            const total = localStorage.getItem('totalPrice');
+            localStorage.setItem('totalPrice', +total + +price.textContent.replace(' $', ''));
+        }
+    })
 }
 getProducts();

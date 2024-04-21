@@ -1,3 +1,0 @@
-// scrolltosomewhere
-// autoprogress
-// handleActive
