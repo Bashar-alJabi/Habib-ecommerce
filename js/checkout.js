@@ -10,21 +10,15 @@ totalPrice.textContent = localStorage.getItem('totalPrice') ? localStorage.getIt
 // Handle Delete Button
 deleteBtn.addEventListener('click', async() => {
     await Swal.fire({
-        title: "Are you sure?",
-        text: "You won't be able to revert this!",
-        icon: "warning",
-        showCancelButton: true,
-        confirmButtonColor: "#3085d6",
-        cancelButtonColor: "#d33",
-        confirmButtonText: "Yes, delete it!"
+        title: "Are you sure?", text: "You won't be able to revert this!",
+        icon: "warning", showCancelButton: true,
+        confirmButtonColor: "#3085d6", cancelButtonColor: "#d33", confirmButtonText: "Yes, delete it!"
     }).then(async(res) => {
         if (res.isConfirmed) {
             localStorage.removeItem('numProd');
             localStorage.removeItem('totalPrice');
             await Swal.fire({
-                title: "Deleted!",
-                text: "Your file has been deleted.",
-                icon: "success"
+                title: "Deleted!", text: "Your products has been deleted.", icon: "success"
             });
             window.location.reload();
         }
@@ -36,9 +30,7 @@ purchaseBtn.addEventListener('click', async() => {
     localStorage.removeItem('numProd');
     localStorage.removeItem('totalPrice');
     await Swal.fire({
-        title: "Good Choice!",
-        text: "Products are on their way to you!",
-        icon: "success"
+        title: "Good Choice!", text: "Products are on their way to you!", icon: "success"
     });
     window.location.reload();
 });
